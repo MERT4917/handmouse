@@ -19,14 +19,30 @@ The script uses **MediaPipe** to detect hand landmarks in real time from the web
 - Python 3.8+
 - Webcam
 
-Install dependencies:
+## Installation
 
+Follow these steps to get the project running on your machine:
+
+**1. Clone the repository**
+```bash
+git clone https://github.com/your-username/mousemove.git
+cd mousemove
+```
+
+**2. (Recommended) Create a virtual environment**
+```bash
+python -m venv venv
+```
+Activate it:
+- Windows: `venv\Scripts\activate`
+- macOS / Linux: `source venv/bin/activate`
+
+**3. Install dependencies**
 ```bash
 pip install opencv-python mediapipe pyautogui numpy
 ```
 
-## Usage
-
+**4. Run the script**
 ```bash
 python no_mouse_move.py
 ```
@@ -34,6 +50,17 @@ python no_mouse_move.py
 Press `Q` to quit.
 
 > **Note:** On first launch (especially as a compiled `.exe`), the app may take **3–4 seconds** to open. This is normal — MediaPipe, OpenCV, and NumPy are large libraries that need time to load. A splash screen is shown during this period so you know the app is starting.
+
+### Running as an Executable (Windows)
+
+If you prefer not to install Python, you can build a standalone `.exe`:
+
+```bash
+pip install pyinstaller
+pyinstaller --onefile --noconsole --collect-all mediapipe no_mouse_move.py
+```
+
+The executable will be created at `dist\no_mouse_move.exe`. Double-click to run — no Python installation required.
 
 ## Configuration
 
